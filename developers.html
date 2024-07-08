@@ -18,9 +18,10 @@
           	background-image: url(img/bg_img.png);
 		}
 		.img-banner {
-  			width: 100%;
+  			width: 550px;
   			height: 300px;
-  			object-fit: cover; 
+			margin-left: auto;
+			margin-right: auto;
 		}
         .avatar {
             display: block;
@@ -29,11 +30,17 @@
             width: 50%;
             border-radius: 50%;
         }
+		.navbar-nav > li > a:hover {
+			color:#ffc107;
+		}
+		.navbar-nav .nav-item .nav-link:focus {
+    		text-decoration: underline;
+		}
 		</style>
 	</head>
 	<body class="bg-secondary">
-		<div class="container-fluid p-2 bg-dark text-warning text-center">
-			<img src="img/banner.png" class=img-banner>
+		<div class="container-fluid bg-dark text-warning text-center">
+			<img src="img/eer.png" class=img-banner>
 		</div>
 		<nav class="navbar navbar-expand-sm navbar-dark bg-dark bg-gradient text-white">
         	<div class="container-mt-5">
@@ -45,19 +52,10 @@
 					<li class="nav-item">
                 		<a class="nav-link" aria-current="page" href="downloads.html"><i class="fa fa-download" aria-hidden="true"></i> <b>Downloads</b></a>
             		</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<i class="fa fa-question" aria-hidden="true"></i>
-							Tutorials
-						</a>
-						<ul class="dropdown-menu">
-						  <li><a class="dropdown-item text-warning" href="play.html">EER for beginners</a></li>
-						  <li><a class="dropdown-item text-white" href="#">Another action</a></li>
-						  <li><hr class="dropdown-divider text-white"></li>
-						  <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
-						</ul>
-					  </li>
-			  		<li class="nav-item">
+					<li class="nav-item">
+						<a class="nav-link" aria-current="page" href="play.html"><i class="fa fa-question" aria-hidden="true"></i> <b>Tutorial</b></a>
+					</li>
+					<li class="nav-item">
                 		<a class="nav-link active" aria-current="page" href="developers.html"><i class="fa fa-address-book" aria-hidden="true"></i> <b>Staff</b></a>
             		</li>
           		</ul>
@@ -82,6 +80,21 @@
                                   </div>
 							</div>
 						</td>
+						<td>
+                            <div class="card text-white bg-dark border border-2" style="width: 14rem;">
+                            <img src="img/male_avatar.png" class=avatar alt="Card image cap">
+                            <div class="card-header text-warning">
+                                <b>Denji</b>
+                              </div>
+                				<div class="card-body">
+                  					<h5 class="card-title"></h5>
+                  					<p class="card-text">Administrator, Moderator, Designer</p>
+                				</div>
+                                <div class="card-footer">
+                                    IGN: ?
+                                  </div>
+							</div>
+						</td>
                         <td>
                             <div class="card text-white bg-dark border border-2" style="width: 14rem;">
                             <img src="img/male_avatar.png" class=avatar alt="Card image cap">
@@ -90,25 +103,10 @@
                               </div>
                 				<div class="card-body">
                   					<h5 class="card-title"></h5>
-                  					<p class="card-text">Developer at backend (Server) and database.</p>
+                  					<p class="card-text">Developer at frontend and backend.</p>
                 				</div>
                                 <div class="card-footer text-white">
                                     IGN: Capasha
-                                  </div>
-							</div>
-						</td>
-                        <td>
-                            <div class="card text-white bg-dark border border-2" style="width: 14rem;">
-                            <img src="img/male_avatar.png" class=avatar alt="Card image cap">
-                            <div class="card-header text-primary">
-                                <b>Dae</b>
-                              </div>
-                				<div class="card-body">
-                  					<h5 class="card-title"></h5>
-                  					<p class="card-text">Developer at backend (Server) and database.</p>
-                				</div>
-                                <div class="card-footer text-white">
-                                    IGN: Dae
                                   </div>
 							</div>
 						</td>
@@ -138,7 +136,7 @@
                               </div>
                 				<div class="card-body">
                   					<h5 class="card-title"></h5>
-                  					<p class="card-text">Moderator of the Discord Server.</p>
+                  					<p class="card-text">Moderator of the Discord Server and Ingame.</p>
                 				</div>
                                 <div class="card-footer">
                                     IGN: ?

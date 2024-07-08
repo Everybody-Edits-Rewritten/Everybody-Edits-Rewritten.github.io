@@ -17,19 +17,26 @@
 			background-repeat: repeat;
           	background-image: url(img/bg_img.png);
 		}
-		.link {
-			color: #ffc107;
+		.link  {
+  			color: #ffc107;
+		}
+		.navbar-nav > li > a:hover {
+			color:#ffc107;
+		}
+		.navbar-nav .nav-item .nav-link:focus {
+    		text-decoration: underline;
 		}
 		.img-banner {
-  			width: 100%;
+  			width: 550px;
   			height: 300px;
-  			object-fit: cover; 
+			margin-left: auto;
+			margin-right: auto;
 		}
     </style>
     </head>
 	<body class="bg-secondary">
-		<div class="container-fluid p-2 bg-dark text-warning text-center">
-			<img src="img/banner.png" class=img-banner>
+		<div class="container-fluid bg-dark text-warning text-center">
+			<img src="img/eer.png" class=img-banner>
 		</div>
 		<nav class="navbar navbar-expand-sm navbar-dark bg-dark bg-gradient text-white">
         	<div class="container-mt-5">
@@ -41,18 +48,9 @@
 					<li class="nav-item">
                 		<a class="nav-link" aria-current="page" href="downloads.html"><i class="fa fa-download" aria-hidden="true"></i> Downloads</a>
             		</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<i class="fa fa-question" aria-hidden="true"></i>
-							Tutorials
-						</a>
-						<ul class="dropdown-menu">
-						  <li><a class="dropdown-item text-white" href="play.html">EER for beginners</a></li>
-						  <li><a class="dropdown-item text-white" href="#">Another action</a></li>
-						  <li><hr class="dropdown-divider"></li>
-						  <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
-						</ul>
-					  </li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="play.html"><i class="fa fa-question" aria-hidden="true"></i> <b>Tutorial</b></a>
+					</li>
 					  <li class="nav-item">
                 		<a class="nav-link" aria-current="page" href="developers.html"><i class="fa fa-address-book" aria-hidden="true"></i> Staff</a>
             		</li>
