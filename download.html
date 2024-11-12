@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <title>Everybody Edits Rewritten</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+
+    .bi-discord {
+        color:rgb(114,137,218);
+    }
+    .bi-info-circle {
+        color:rgb(90, 111, 205);
+    }
+    .bi-download {
+        color:rgb(90, 205, 109);
+    }
+    .bi-journal-bookmark {
+        color:rgb(205, 197, 90);
+    }
+    .shadow-sides {
+        box-shadow: 10px 0 15px -10px rgba(0, 0, 0, 0.3), -10px 0 15px -10px rgba(0, 0, 0, 0.3),0 10px 15px -2px rgba(0, 0, 0, 0.3);
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-image: url(img/bgdark.png);
+        background-repeat: repeat;
+    }
+    .container {
+        flex: 1;
+        background-color: var(--bs-body-bg, #fff);
+        color: var(--bs-body-color, #000);
+    }
+    .bg-image {
+      background-image: url(img/bglight.png);
+      background-position: center;
+      align-items: center;
+      justify-content: center;
+    }
+    .update {
+     color:rgb(66, 148, 80);;
+    }
+    #footer { 
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        height: 2.5rem;
+    }
+    img, object{
+        max-height: 100%;
+        max-width: 100%;
+    }
+    </style>
+<script>
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i <ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        /*function checkCookie() {
+            let theme = getCookie("light");
+            var icon = document.getElementById("darkModeIcon");
+            if (theme == "True") {
+                if (icon.classList.contains('bi-sun')) {
+                    icon.classList.remove('bi-sun');
+                    icon.classList.add('bi-moon');
+                }
+                document.body.style.backgroundImage = "url('img/bglight.png')";
+                document.documentElement.removeAttribute('data-bs-theme');
+            }
+            if (theme == "False") {
+                if (icon.classList.contains('bi-moon')) {
+                    icon.classList.remove('bi-moon');
+                    icon.classList.add('bi-sun');
+                }
+                document.body.style.backgroundImage = "url('img/bgdark.png')";
+                document.documentElement.setAttribute('data-bs-theme', 'dark');
+            }
+        }*/
+</script>
+</head>
+<body onload="checkCookie()">
+    <!-- navbar -->
+     <div class="container shadow-sides">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a href="index.html" class="navbar-brand"><img src="img/banner.png" class="img-banner"></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarm">
+        <span class="navbar-toggler-icon"></span></button>
+    <!-- links -->
+            <div class="collapse navbar-collapse" id="navbarm">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="download.html" class="nav-link"><i class="bi bi-download"></i> Download</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="info.html" class="nav-link"><i class="bi bi-info-circle"></i> Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="rules.html" class="nav-link"><i class="bi bi-journal-bookmark"></i> Rules</a>
+                    </li>
+                </ul>
+                <div class="dark-mode-toggle">
+                    <i id="darkModeIcon" class="bi bi-sun"></i> 
+                </div>
+                <script>
+                    document.getElementById('darkModeIcon').addEventListener('click', function () {
+                        this.classList.toggle('bi-moon');
+                        this.classList.toggle('bi-sun');
+                        let theme = document.documentElement.getAttribute('data-bs-theme');
+                        if (theme === 'dark') {
+                            //document.cookie = "light=True;path=/";
+                            document.body.style.backgroundImage = "url('img/bglight.png')";
+                            document.documentElement.removeAttribute('data-bs-theme');
+                        } else {
+                            //document.cookie = "light=False;path=/";
+                            document.body.style.backgroundImage = "url('img/bgdark.png')";
+                            document.documentElement.setAttribute('data-bs-theme', 'dark');
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </nav>
+    <!-- text -->
+    <div class="container"><br>
+        <div class="container text-center">
+            <div class="row align-items-start">
+              <div class="col">
+                <b>Latest Version:</b> <p class="update">2.0.0</p>
+              </div>
+            </div>
+          </div>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 50 50" fill="currentColor"><path d="M 6 4 C 4.9069372 4 4 4.9069372 4 6 L 4 44 C 4 45.093063 4.9069372 46 6 46 L 44 46 C 45.093063 46 46 45.093063 46 44 L 46 6 C 46 4.9069372 45.093063 4 44 4 L 6 4 z M 6 6 L 44 6 L 44 44 L 6 44 L 6 6 z M 17.025391 14 L 17 36 L 19.464844 36 L 19.5 26 L 25 26 L 25 24 L 19.498047 24 L 19.490234 16.144531 L 26 16.144531 L 26 14 L 17.025391 14 z M 29.5 14 L 29.535156 36 L 32 36 L 32 14 L 29.5 14 z"></path></svg>
+                    &nbsp;Download - Latest Adobe Flash File (SWF)
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Download our latest Adobe Flash File (SWF) here: <a href="https://github.com/Everybody-Edits-Rewritten/Releases/releases/latest">EERewritten_vx.x.x.swf</a></div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      <i class="fa-brands fa-windows"></i>&nbsp;Windows - (Flash Player/Projector)
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        Here we host Adobe Flash Player Projectors for Windows.<br>
+                        There exist two different Projectors, one for normal usage. And one for Bug testing/developing.<br><br>
+                        <b>Projector for normal usage:</b><br>
+                        <a href="https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa.exe" target="_blank">Official Mirror</a>, 
+                        <a href="https://mega.nz/file/IvYCSLhT#eDQ-V3i29pRoVoOsO7FjvEh2TIDFUCtk6m1aPbIHcfM" target="_blank">Mega.nz Mirror</a><br><br>
+                        <b>Projector for Bug testing/Developing:</b><br>
+                        <a href="https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.exe" target="_blank">Official Mirror</a>, 
+                        <a href="https://mega.nz/file/JyRlVKDT#UT1Rtq3TTWoAz0H1Z31UNxeGAlNt9DJmZVMnotx99nc" target="_blank">Mega.nz Mirror</a>
+                    </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <i class="fa-brands fa-linux fa-lg"></i>&nbsp;Linux - (Flash Player/Projector)
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                        Here we host Adobe Flash Player Projectors for Linux.<br>
+                        There exist two different Projectors, one for normal usage. And one for Bug testing/developing.<br><br>
+                        <b>Projector for normal usage:</b><br>
+                        <a href="https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flash_player_sa_linux.x86_64.tar.gz" target="_blank">Official Mirror</a>, 
+                        <a href="https://mega.nz/file/9q5knJKb#IvVbkTSAAkMnzCNHOzC3HGvYIs2eJ1K7YGBnM-dtO4M" target="_blank">Mega.nz Mirror</a><br><br>
+                        <b>Projector for Bug testing/Developing:</b><br>
+                        <a href="https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flash_player_sa_linux_debug.x86_64.tar.gz" target="_blank">Official Mirror</a>, 
+                        <a href="https://mega.nz/file/974mRQaa#dn3ClV2QA55DVquG2AQ7taU_k3zodCwAAVZBBT1Pcrg" target="_blank">Mega.nz Mirror</a>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    <i class="fa-brands fa-apple fa-lg"></i>&nbsp;MacOS - (Flash Player/Projector)
+                </button>
+              </h2>
+              <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    Here we host Adobe Flash Player Projectors for MacOS.<br>
+                    There exist two different Projectors, one for normal usage. And one for Bug testing/developing.<br><br>
+                    <b>Projector for normal usage:</b><br>
+                    <a href="https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa.dmg" target="_blank">Official Mirror</a>, 
+                    <a href="https://mega.nz/file/tzpXRIYR#1I_PHLDDwTpTXTMRfrHRVYYwItT9kDwdMrWs3luTQ_A" target="_blank">Mega.nz Mirror</a><br><br>
+                    <b>Projector for Bug testing/Developing:</b><br>
+                    <a href="hhttps://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.dmg" target="_blank">Official Mirror</a>, 
+                    <a href="https://mega.nz/file/J3xy0KYJ#WZ5QGnkBb2vNBEWSDZlwC9_v3MOGQAeTrVuFxxK0kzc" target="_blank">Mega.nz Mirror</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+     <footer id="footer">Copyright &copy; Everybody Edits Rewritten - 2024</footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b92fe56fd9.js" crossorigin="anonymous"></script>
+</body>
+</html>

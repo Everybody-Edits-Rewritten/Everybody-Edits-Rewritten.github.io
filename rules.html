@@ -7,6 +7,7 @@
     <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
 
     .bi-discord {
@@ -54,7 +55,15 @@
         max-width: 100%;
     }
     </style>
-    <script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#rulePopup').click(function() {
+                $('#myModal').modal('show');
+            });
+        });
+        $(window).on('load', function() {
+            $('#myModal').modal('show');
+        });
         function getCookie(cname) {
             let name = cname + "=";
             let decodedCookie = decodeURIComponent(document.cookie);
@@ -137,21 +146,108 @@
         </div>
     </nav>
     <!-- text -->
-        <div class="container-sm h-100 d-flex justify-content-center align-items-center"><br>
-            <div class="table-condensed p-4">
-                <tbody>
-                <tr>
-                    <td class>
-                        <h2>Welcome to the official site for Everybody Edits Rewritten!</h2>
-                        <br>Everybody Edits Rewritten is a free-to-play, online multiplayer game that allows players to create and share their own worlds!<br>
-                        <br>To start playing, simply click <a href="download.html" class="link">download</a>! This link will take you directly to the download page, and you can read all the information about the game inside!</div>
-                    </td>
-                </tr>
-                </tbody>
+    <div class="container"><br>
+        <button type="button" class="btn btn-secondary" id="rulePopup">Show Rules</button>
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title text-warning">Rules of Everybody Edits Rewritten</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <h5 class="text-warning">General Community Guidelines:</h5>
+                  <ul>
+                    <li>
+                        Be nice to others and respect eachother.
+                    </li>
+                    <li>
+                        Do your best to keep a nice atmosphere in the game.
+                    </li>
+                    <li>
+                        Keep the chat safe for younger players.
+                    </li>
+                    <li>
+                        Do not spam or harass others.
+                    </li>
+                    <li>
+                        Report rule breakers using the /reportabuse command.
+                    </li>
+                  </ul>
+                  <h5 class="text-warning">In addition to above, do not create/send content that:</h5>
+                  <ul>
+                    <li>
+                        is illegal.
+                    </li>
+                    <li>
+                        contains references to the use of drugs, sexual acts or violence.
+                    </li>
+                    <li>
+                        contains swearing at others or bypasses the word filter.
+                    </li>
+                    <li>
+                        discriminates other people based on their religion, race, sex, political beliefs, age, sexuality, or anything else.
+                    </li>
+                    <li>
+                        incites harm against people or encourages others to do so.
+                    </li>
+                    <li>
+                        contains others' personal or confidential information.
+                    </li>
+                    <li>
+                        impersonates someone in a misleading or deceptive manner.
+                    </li>
+                  </ul>
+                  (the rules above apply to all content you submit to EERewritten including chats, sign text and even blocks)
+                    <br>
+                    <br>
+                  <h5 class="text-warning">And also do not:</h5>
+                  <ul>
+                    <li>
+                        attempt to hack or interfere with the normal use of EERewritten.
+                    </li>
+                    <li>
+                        bypass bans by using more than one account.
+                    </li>
+                    <li>
+                        abuse the reporting system.
+                    </li>
+                  </ul>
+                  <h5 class="text-warning">Reporting:</h5>
+                  <ul>
+                    <li>
+                        DO report people who break the rules stated above.
+                    </li>
+                    <li>
+                        DO explain the situation as detailed as you can.
+                    </li>
+                    <li>
+                        DO NOT report things that are not against the rules.
+                    </li>
+                    <li>
+                        DO NOT report trolling as it is not against the rules.
+                    </li>
+                    <li>
+                        DO NOT report world owners for not giving you edit.
+                    </li>
+                  </ul>
+                <!-- Modal footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-success" mr-auto data-bs-dismiss="modal">Accept</button>
+                    </div>
+              </div>
             </div>
+          </div>
         </div>
+    </div>
+</div>
     <footer id="footer">Copyright &copy; Everybody Edits Rewritten - 2024</footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
 </body>
 </html>
