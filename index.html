@@ -12,9 +12,6 @@
     .bi-discord {
         color:rgb(114,137,218);
     }
-    .bi-info-circle {
-        color:rgb(90, 111, 205);
-    }
     .bi-download {
         color:rgb(90, 205, 109);
     }
@@ -43,7 +40,6 @@
       justify-content: center;
     }
     #footer { 
-        position: absolute;
         bottom: 0;
         width: 100%;
         text-align: center;
@@ -91,71 +87,96 @@
             }
         }*/
     </script>
+
 </head>
 <body onload="checkCookie()">
     <!-- navbar -->
-     <div class="container shadow-sides">
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a href="index.html" class="navbar-brand"><img src="img/banner.png" class="img-banner"></a>
+    <div class="container shadow-sides">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a href="index.html" class="navbar-brand"><img src="img/banner.png" class="img-banner"></a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarm">
-        <span class="navbar-toggler-icon"></span></button>
-    <!-- links -->
-            <div class="collapse navbar-collapse" id="navbarm">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="download.html" class="nav-link"><i class="bi bi-download"></i> Download</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="info.html" class="nav-link"><i class="bi bi-info-circle"></i> Information</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="rules.html" class="nav-link"><i class="bi bi-journal-bookmark"></i> Rules</a>
-                    </li>
-                </ul>
-                <div class="dark-mode-toggle">
-                    <i id="darkModeIcon" class="bi bi-sun"></i> 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarm">
+                <span class="navbar-toggler-icon"></span></button>
+                <!-- links -->
+                <div class="collapse navbar-collapse" id="navbarm">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="download.html" class="nav-link"><i class="bi bi-download"></i> Downloads</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="rules.html" class="nav-link"><i class="bi bi-journal-bookmark"></i> Rules</a>
+                        </li>
+                    </ul>
+                    <div class="dark-mode-toggle">
+                        <i id="darkModeIcon" class="bi bi-sun"></i> 
+                    </div>
+                    <script>
+                        document.getElementById('darkModeIcon').addEventListener('click', function () {
+                            this.classList.toggle('bi-moon');
+                            this.classList.toggle('bi-sun');
+                            let theme = document.documentElement.getAttribute('data-bs-theme');
+                            if (theme === 'dark') {
+                                //document.cookie = "light=True;path=/";
+                                document.body.style.backgroundImage = "url('img/bglight.png')";
+                                document.documentElement.removeAttribute('data-bs-theme');
+                            } else {
+                                //document.cookie = "light=False;path=/";
+                                document.body.style.backgroundImage = "url('img/bgdark.png')";
+                                document.documentElement.setAttribute('data-bs-theme', 'dark');
+                            }
+                        });
+                    </script>
                 </div>
-                <script>
-                    document.getElementById('darkModeIcon').addEventListener('click', function () {
-                        this.classList.toggle('bi-moon');
-                        this.classList.toggle('bi-sun');
-                        let theme = document.documentElement.getAttribute('data-bs-theme');
-                        if (theme === 'dark') {
-                            //document.cookie = "light=True;path=/";
-                            document.body.style.backgroundImage = "url('img/bglight.png')";
-                            document.documentElement.removeAttribute('data-bs-theme');
-                        } else {
-                            //document.cookie = "light=False;path=/";
-                            document.body.style.backgroundImage = "url('img/bgdark.png')";
-                            document.documentElement.setAttribute('data-bs-theme', 'dark');
-                        }
-                    });
-                </script>
             </div>
-        </div>
-    </nav>
-    <!-- text -->
-    <div class="container-sm h-100 d-flex justify-content-center align-items-center"><br>
-        <div class="table-condensed p-4">
-            <tbody>
-                <tr>
-                    <td>
-                        <h2>Welcome to the official site for Everybody Edits Rewritten!</h2>
-                        <p>
-                            Everybody Edits Rewritten is a free-to-play, online multiplayer game that allows players to create and share their own worlds! 
-                            
-                        </p>
-                        <p>
-                            To start playing, simply click <a href="download.html" class="link">download</a>! This link will take you directly to the download page, and you can read all the information about the game inside!
-                        </p>
-                    </td>
-                </tr>
-            </tbody>
+        </nav>
+
+        <!-- text -->
+        <div class="container-sm h-100 d-flex justify-content-center align-items-center"><br>
+            <div class="table-condensed p-4">
+                <tbody>
+                    <tr>
+                        <td class>
+                            <h2>Welcome to the official site for Everybody Edits Rewritten!</h2>
+                            <p>
+                                Everybody Edits Rewritten is a free-to-play, online multiplayer game that allows players to create and share their own worlds! 
+                            </p>
+                            <h2>About running EER</h1>
+                            <p>
+                                To be as faithful to the original Everybody Edits as possible, 
+                                Everybody Edits Rewritten is made in Adobe Flash.
+                                This means that to run the game, you need some way to open <b>.swf</b> files.
+                                Unfortunately, due to security vulnerabilities inherent to Flash, Adobe discontinued 
+                                Flash Player in December 2020 and put in a lot of extra effort to make running .swfs difficult.
+                            </p>
+                            <p>
+                                If you have doubts about the integrity of our code, feel free to take a look at its source code 
+                                using a tool like 
+                                <a href=https://github.com/jindrapetrik/jpexs-decompiler/releases/latest class="link" target="_blank">FFDEC (JPEXS Free Flash Decompiler)</a> 
+                                before running it!
+                            </p>
+                            <h2>How to run the game</h2>
+                            <p>
+                                To run EER, you need the client (<a href="https://github.com/Everybody-Edits-Rewritten/Releases/releases/download/2.1.2/Everybody.Edits.Rewritten.swf">Everybody.Edits.Rewritten.swf</a>) and some way to
+                                open it (Flash Player/Projector version 32). We provide download links for both on this site's
+                                <a href="download.html" class="link" target="_blank">Downloads</a> page. Make note of where you download the client!
+                            </p>
+                            <p>
+                                Once you've downloaded Flash Player and a copy of the client, open Flash Player, click File>Open 
+                                in the top-left corner, click "Browse...", and select the .swf you downloaded. That's it -- you're 
+                                ready to play!
+                            </p>
+                            <h2>Stuck, or have another question?</h2>
+                            <p>
+                                Contact us on <a href="https://discord.gg/JaPmVUXXC4" class="link"><i class="bi bi-discord"></i> Discord</a>.
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+           </div>
         </div>
     
-    <footer id="footer">Copyright &copy; Everybody Edits Rewritten - 2025</footer>
+        <footer id="footer">Copyright &copy; Everybody Edits Rewritten - 2025</footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
