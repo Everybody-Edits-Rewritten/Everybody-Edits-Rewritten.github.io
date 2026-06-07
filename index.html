@@ -51,25 +51,10 @@
     }
     </style>
     <script>
-        function getCookie(cname) {
-            let name = cname + "=";
-            let decodedCookie = decodeURIComponent(document.cookie);
-            let ca = decodedCookie.split(';');
-            for(let i = 0; i <ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
-        /*function checkCookie() {
-            let theme = getCookie("light");
+        function checkTemp() {
+            const savedTheme = localStorage.getItem("theme");
             var icon = document.getElementById("darkModeIcon");
-            if (theme == "True") {
+            if (savedTheme == "light") {
                 if (icon.classList.contains('bi-sun')) {
                     icon.classList.remove('bi-sun');
                     icon.classList.add('bi-moon');
@@ -77,7 +62,7 @@
                 document.body.style.backgroundImage = "url('img/bglight.png')";
                 document.documentElement.removeAttribute('data-bs-theme');
             }
-            if (theme == "False") {
+            if (savedTheme == "dark") {
                 if (icon.classList.contains('bi-moon')) {
                     icon.classList.remove('bi-moon');
                     icon.classList.add('bi-sun');
@@ -85,11 +70,11 @@
                 document.body.style.backgroundImage = "url('img/bgdark.png')";
                 document.documentElement.setAttribute('data-bs-theme', 'dark');
             }
-        }*/
+        }
     </script>
 
 </head>
-<body onload="checkCookie()">
+<body onload="checkTemp()">
     <!-- navbar -->
     <div class="container shadow-sides">
         <nav class="navbar navbar-expand-lg">
@@ -120,10 +105,12 @@
                                 //document.cookie = "light=True;path=/";
                                 document.body.style.backgroundImage = "url('img/bglight.png')";
                                 document.documentElement.removeAttribute('data-bs-theme');
+                                localStorage.setItem("theme", "light");
                             } else {
                                 //document.cookie = "light=False;path=/";
                                 document.body.style.backgroundImage = "url('img/bgdark.png')";
                                 document.documentElement.setAttribute('data-bs-theme', 'dark');
+                                localStorage.setItem("theme", "dark");
                             }
                         });
                     </script>
