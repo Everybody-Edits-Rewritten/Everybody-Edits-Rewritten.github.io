@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <title>Everybody Edits Rewritten - Team</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <style>
+
+    .bi-discord {
+        color:rgb(114,137,218);
+    }
+    .bi-house {
+        color:rgb(90, 149, 230);
+    }
+    .bi-download {
+        color:rgb(90, 205, 109);
+    }
+    .bi-journal-bookmark {
+        color:rgb(205, 197, 90);
+    }
+    .bi-people {
+        color:rgb(205, 130, 90);
+    }
+    .shadow-sides {
+        box-shadow: 10px 0 15px -10px rgba(0, 0, 0, 0.3), -10px 0 15px -10px rgba(0, 0, 0, 0.3),0 10px 15px -2px rgba(0, 0, 0, 0.3);
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-image: url(img/bgdark.png);
+        background-repeat: repeat;
+    }
+    .container {
+        flex: 1;
+        background-color: var(--bs-body-bg, #fff);
+        color: var(--bs-body-color, #000);
+    }
+    .bg-image {
+      background-image: url(img/bglight.png);
+      background-position: center;
+      align-items: center;
+      justify-content: center;
+    }
+    #footer {
+        width: 100%;
+        text-align: center;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        background-color: var(--bs-body-bg, #fff);
+        color: var(--bs-body-color, #000);
+    }
+    img, object{
+        max-height: 100%;
+        max-width: 100%;
+    }
+    .profile-card {
+        border-top-width: 4px;
+    }
+    .profile-avatar {
+        width: 96px;
+        height: 96px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid var(--bs-border-color, #dee2e6);
+        background-color: rgba(127, 127, 127, 0.15);
+    }
+    .member-avatar {
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid var(--bs-border-color, #dee2e6);
+        background-color: rgba(127, 127, 127, 0.15);
+        flex-shrink: 0;
+    }
+    .card-admin     { border-top-color: rgb(220, 53, 69); }
+    .card-moderator { border-top-color: rgb(199, 90, 205); }
+    .card-developer { border-top-color: rgb(140, 100, 70); }
+    .card-artist    { border-top-color: rgb(90, 205, 109); }
+    .badge-admin     { background-color: rgb(220, 53, 69);  color: #fff; }
+    .badge-moderator { background-color: rgb(199, 90, 205); color: #fff; }
+    .badge-developer { background-color: rgb(140, 100, 70); color: #fff; }
+    .badge-artist    { background-color: rgb(90, 205, 109); color: #fff; }
+    </style>
+    <script>
+        function checkTemp() {
+            const savedTheme = localStorage.getItem("theme");
+            var icon = document.getElementById("darkModeIcon");
+            if (savedTheme == "light") {
+                if (icon.classList.contains('bi-sun')) {
+                    icon.classList.remove('bi-sun');
+                    icon.classList.add('bi-moon');
+                }
+                document.body.style.backgroundImage = "url('img/bglight.png')";
+                document.documentElement.removeAttribute('data-bs-theme');
+            }
+            if (savedTheme == "dark") {
+                if (icon.classList.contains('bi-moon')) {
+                    icon.classList.remove('bi-moon');
+                    icon.classList.add('bi-sun');
+                }
+                document.body.style.backgroundImage = "url('img/bgdark.png')";
+                document.documentElement.setAttribute('data-bs-theme', 'dark');
+            }
+        }
+    </script>
+
+</head>
+<body onload="checkTemp()">
+    <div class="container shadow-sides">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a href="index.html" class="navbar-brand"><img src="img/banner.png" class="img-banner"></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarm">
+                <span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarm">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link"><i class="bi bi-house"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="download.html" class="nav-link"><i class="bi bi-download"></i> Downloads</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="rules.html" class="nav-link"><i class="bi bi-journal-bookmark"></i> Rules</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="team.html" class="nav-link"><i class="bi bi-people"></i> Team</a>
+                        </li>
+                    </ul>
+                    <div class="dark-mode-toggle">
+                        <i id="darkModeIcon" class="bi bi-sun"></i>
+                    </div>
+                    <script>
+                        document.getElementById('darkModeIcon').addEventListener('click', function () {
+                            this.classList.toggle('bi-moon');
+                            this.classList.toggle('bi-sun');
+                            let theme = document.documentElement.getAttribute('data-bs-theme');
+                            if (theme === 'dark') {
+                                document.body.style.backgroundImage = "url('img/bglight.png')";
+                                document.documentElement.removeAttribute('data-bs-theme');
+                                localStorage.setItem("theme", "light");
+                            } else {
+                                document.body.style.backgroundImage = "url('img/bgdark.png')";
+                                document.documentElement.setAttribute('data-bs-theme', 'dark');
+                                localStorage.setItem("theme", "dark");
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container"><br>
+            <div class="text-center mb-4">
+                <h2>Meet the Team</h2>
+                <p>The people who keep Everybody Edits Rewritten running.</p>
+            </div>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 pb-4">
+                <div class="col">
+                    <div class="card h-100 profile-card card-admin">
+                        <div class="card-header text-center">
+                            <span class="badge badge-admin">Admins</span>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-center gap-3">
+                                <img src="img/male_avatar.png" alt="avatar" class="member-avatar">
+                                <span class="fw-semibold">Rivelka</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center gap-3">
+                                <img src="img/male_avatar.png" alt="avatar" class="member-avatar">
+                                <span class="fw-semibold">Necro</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center gap-3">
+                                <img src="img/male_avatar.png" alt="avatar" class="member-avatar">
+                                <span class="fw-semibold">Capasha</span>
+                            </li>
+                        </ul>
+                        <div class="card-footer small text-secondary">
+                            Manages the servers, oversees the community and has the final say on all decisions.
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 profile-card card-moderator">
+                        <div class="card-header text-center">
+                            <span class="badge badge-moderator">Moderators</span>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-center gap-3">
+                                <img src="img/male_avatar.png" alt="avatar" class="member-avatar">
+                                <span class="fw-semibold">Thebigh</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center gap-3">
+                                <img src="img/male_avatar.png" alt="avatar" class="member-avatar">
+                                <span class="fw-semibold">Entropy</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center gap-3">
+                                <img src="img/male_avatar.png" alt="avatar" class="member-avatar">
+                                <span class="fw-semibold">EternalQuest</span>
+                            </li>
+                        </ul>
+                        <div class="card-footer small text-secondary">
+                            Keeps the game and chat safe, handles reports and enforces the community rules.
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 profile-card card-developer">
+                        <div class="card-header text-center">
+                            <span class="badge badge-developer">Developers</span>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-center gap-3">
+                                <img src="img/male_avatar.png" alt="avatar" class="member-avatar">
+                                <span class="fw-semibold">Rivelka</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center gap-3">
+                                <img src="img/male_avatar.png" alt="avatar" class="member-avatar">
+                                <span class="fw-semibold">Capasha</span>
+                            </li>
+                        </ul>
+                        <div class="card-footer small text-secondary">
+                            Builds and maintains the game client, fixes bugs and adds new features.
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 profile-card card-artist">
+                        <div class="card-header text-center">
+                            <span class="badge badge-artist">Artists</span>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-center gap-3">
+                                <img src="img/male_avatar.png" alt="avatar" class="member-avatar">
+                                <span class="fw-semibold">Aliyra</span>
+                            </li>
+                        </ul>
+                        <div class="card-footer small text-secondary">
+                            Creates the blocks, smileys and artwork that give the game its look and feel.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer id="footer">Copyright &copy; Everybody Edits Rewritten - 2026</footer>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
